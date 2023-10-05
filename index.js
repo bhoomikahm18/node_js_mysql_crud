@@ -1,9 +1,10 @@
 const express = require('express'),
     app = express();
-    require('express-async-errors')
+require('express-async-errors')
 const db = require('./db.js'),
     employeeRoutes = require('./contollers/employee_controller.js')
 
+app.use(express.json());
 app.use('/api/employees', employeeRoutes)
 app.use((err, req, res, next) => {
     console.log(err);
