@@ -1,10 +1,14 @@
 const express = require('express'),
     app = express();
+    require('express-async-errors')
 const db = require('./db.js'),
     employeeRoutes = require('./contollers/employee_controller.js')
 
 app.use('/api/employees', employeeRoutes)
-
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(err.status || 500).send('Somthing went wrong')
+})
 
 db.query("SELECT 1")
     .then(() => {
