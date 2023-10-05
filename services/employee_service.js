@@ -10,10 +10,10 @@ module.exports.getEmployeeById = async (id) => {
     return record;
 }
 
-// module.exports.deleteEmployee = async (id) => {
-//     const [{ affectedRows }] = await db.query("DELETE FROM employee WHERE id = ?", [id])
-//     return affectedRows;
-// }
+module.exports.deleteEmployee = async (id) => {
+    const [{ affectedRows }] = await db.query("DELETE FROM employee WHERE id = ?", [id])
+    return affectedRows;
+}
 
 // module.exports.addOrEditEmployee = async (obj, id = 0) => {
 //     const [[[{affectedRows}]]] = await db.query("CALL usp_employee_add_or_edit(?,?,?,?)",

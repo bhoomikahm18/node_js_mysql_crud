@@ -17,13 +17,13 @@ router.get('/:id', async (req, res) => {
         res.send(employee)
 })
 
-// router.delete('/:id', async (req, res) => {
-//     const affectedRows = await service.deleteEmployee(req.params.id)
-//     if (affectedRows == 0)
-//         res.status(404).json('no record with given id : ' + req.params.id)
-//     else
-//         res.send('deleted successfully.')
-// })
+router.delete('/:id', async (req, res) => {
+    const affectedRows = await service.deleteEmployee(req.params.id)
+    if (affectedRows == 0)
+        res.status(404).json('no record with given id : ' + req.params.id)
+    else
+        res.send('deleted successfully.')
+})
 
 // router.post('/', async (req, res) => {
 //     await service.addOrEditEmployee(req.body)
